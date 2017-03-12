@@ -1,0 +1,61 @@
+/*the css in this file is taken directly from lab3 index.css*/
+.comments-container {
+  display: block;
+}
+
+.comment {
+  display:flex;
+  flex-flow:flex-start;
+  align-items:center;
+  width:100%;
+  margin:auto;
+  height:150px;
+  margin-top:20px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid grey;
+}
+
+.comment_header{
+    flex-direction: column;
+    width:100px;
+}
+
+.comment_avatar{
+    max-width:50px;
+    max-height:50px;
+}
+
+.comment_avatar img{
+    max-width:100%;
+}
+
+.comment_name{
+    padding-top:10px;
+}
+
+.comment_name a{
+    font-weight:bold;
+    color: #000000;
+    font-size: 36px;
+    text-decoration:none;
+}
+
+.comment_content{
+    width:600px;
+    font-size: 24px;
+}
+
+.comment_btns {
+  text-align: center;
+  padding-top: 25px;
+}
+
+.comment_date {
+  align-self: flex-end;
+  padding-bottom: 10px;
+}
+
+.comment_delete {
+  align-self: flex-start;
+  padding-top: 10px;
+}

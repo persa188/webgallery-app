@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gallery</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="style/glist.css">
+  <link rel="stylesheet" type="text/css" href="style/font.css">
+  <link rel="stylesheet" type="text/css" href="style/main.css">
+</head>
+
+<!--topnav taken from
+  http://www.w3schools.com/css/css_navbar.asp
+-->
+  <ul class="topnav" id="myTopnav">
+    <li><a href="gallery.html">
+      <h2 style="float:right;">Home</h2></a>
+    </li>
+    <li> <a href="glist.html">
+      <h2 style="float:right;">Galleries</h2></a>
+    </li>
+    <li class="icon">
+      <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+    </li>
+    <li><a href="/api/signout/">
+      <h2 style="float: left;">Sign Out</h2>
+    </a>
+    </li>
+  </ul>
+
+  <div class="title">
+    <h1> Select A Gallery </h1>
+  </div>
+  <!-- list of galleries -->
+  <div id="list" class="list">
+  </div>
+
+  <!-- js -->
+  <script src="js/model.js"></script>
+  <script src="js/g-list.js"></script>
+  <script src="js/controller.js"></script>
+</html>

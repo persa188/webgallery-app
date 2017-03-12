@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gallery</title>
+  <meta charset="UTF-8">
+  <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+  <link rel="stylesheet" type="text/css" href="style/form.css">
+  <link rel="stylesheet" type="text/css" href="style/main.css">
+  <link rel="stylesheet" type="text/css" href="style/comment.css">
+  <link rel="stylesheet" type="text/css" href="style/font.css">
+</head>
+<body>
+    <!--topnav taken from
+      http://www.w3schools.com/css/css_navbar.asp
+    -->
+    <ul class="topnav" id="myTopnav">
+      <li><a href="#home">
+        <h2 style="float:right;">Home</h2></a>
+      </li>
+      <li>
+        <a href="#" onclick="view.toggle_minimized('upload-form')">
+          <img src="https://cdn1.iconfinder.com/data/icons/hawcons/32/698394-icon-130-cloud-upload-20.png" alt="" style="float: left;"/>
+          <h2 style="float: right;">Upload</h2>
+        </a>
+      </li>
+      <li> <a href="glist.html">
+        <h2 style="float:right;">Galleries</h2></a>
+      </li>
+      <li class="icon">
+        <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+      </li>
+      <li><a href="/api/signout/">
+        <h2 style="float: left;">Sign Out</h2>
+      </a>
+      </li>
+    </ul>
+
+    <!--upload form-->
+    <form id="upload-form" class="complex_form" style="display: none;" enctype="multipart/form-data" action="/api/upload/" method="post">
+      <div class="form_title">
+        <div class="togglebtn">
+          <button onclick="return view.toggle_minimized('minimzeable-content');">-</button>
+          <button onclick="return view.toggle_minimized('upload-form');">x</button>
+        </div>
+        <h2>Upload Form</h2>
+      </div>
+      <div id="minimzeable-content" class="complex_mini"> <!-- for [-] opt -->
+      <input type="text" id="form_itemtitle" name="title" class="form_element" placeholder="Title" required>
+      <input type="text" id="form_authorname" name="author" class="form_element" placeholder="Author Name">
+      <div class="form_radio">
+        <input type="radio" name="upload" id="file_radio" value="file">
+        <label for="file_radio">file upload</label>
+
+        <input type="radio" name="upload" id="url_radio" value="url">
+        <label for="url_radio">url</label>
+      </div>
+      <div id="radioinput"></div>
+      <input type="submit" class="btn" value="submit">
+      </div>
+    </form>
+
+    <!-- slideshow, js will fill this -->
+    <div id="img-container" class="slideshow-container"></div>
+
+    <!-- comment form, js will fill this -->
+    <div id="comment-form" class="comment-form"></div>
+
+    <!-- comments, js will fill this -->
+    <div id="comments-container" class="comments-container"></div>
+
+    <div class=footer>
+      <p>by Daniel Persaud for CSCC09 Winter 2017 @ UTSC, see <a href="credits.html">credits</a> section for
+      work that was used to make this page.</p>
+    </div>
+    <!-- js -->
+    <script src="js/model.js"></script>
+    <script src="js/view.js"></script>
+    <script src="js/controller.js"></script>
+</body>
+</html>
