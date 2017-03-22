@@ -1,7 +1,7 @@
 this is a simple web gallery app made with node.js and vanilla html/css/js for a CSCC09 at utsc. this was publically uploaded to github
 **after** assignments were marked. usage of materials in this repo are under the MIT license.
 
-##Running the App
+## Running the App
 run the commands below and go to [https://localhost:3000](https://localhost:3000 in) your browser. (there is no http route)
 ```
 cd app
@@ -9,9 +9,9 @@ npm install
 node app.js
 ```
 
-#API Documentation
-##Users API
-###Registering A New User
+# API Documentation
+# #Users API
+### Registering A New User
 - description: register a new user
 - request: `PUT /api/users/`
   - content-type: `application/json`
@@ -30,7 +30,7 @@ curl -X PUT -H "Content-Type: application/json" -H "Cache-Control: no-cache" -H 
 }' "https://localhost:3000/api/users"
 ```
 
-###Logging In
+### Logging In
 - description: register a new user
 - request: `POST /api/signin/`
   - content-type: `application/json`
@@ -50,7 +50,7 @@ curl -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cache" -H
 }' "https://localhost:3000/api/signin/"
 ```
 
-###Signing Out
+### Signing Out
 - description: signs out a user
 - request `GET /api/signout/`
 - response: 200 | 500 if error
@@ -60,8 +60,8 @@ curl -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cache" -H
 curl -X GET -H "Cache-Control: no-cache" -H "Postman-Token: ba2b719a-b3ca-7167-9aa7-c9e449dbf9fe" "https://localhost:3000/api/signout/"
 ```
 
-##Gallery API
-###Getting A Paginated List of Galleries
+## Gallery API
+### Getting A Paginated List of Galleries
 - description: gets a paginated list of gallery's where (start_index)/10 + 1 = page #
 - request: `GET /api/galleries/:start_index`
 - response: 200 | 403 if Unauthorized
@@ -74,7 +74,7 @@ curl -X GET -H "Cache-Control: no-cache" -H "Postman-Token: d1053c47-3497-4904-a
 ```
 
 
-###Creating a Gallery (DEPRICATED)
+### Creating a Gallery (DEPRICATED)
 - description: register a new user | this is unused, but still useful for testing
 - request: `POST /api/gallery/`
   - content-type: `application/json`
@@ -94,8 +94,8 @@ curl -X POST -H "Content-Type: application/javascript" -H "Cache-Control: no-cac
 }' "https://localhost:3000/api/gallery/"
 ```
 
-##Pictures API
-###Upload a picture
+## Pictures API
+### Upload a picture
 - description: upload an image
 - request `POST /api/upload/`
   - content-type: `form-data`
@@ -119,7 +119,7 @@ $ curl -X POST
   -F title=title -F upload=file -F author=author -F picture=@localfilename localhost:3000/api/upload/
 ```
 
-###Getting a picture/image
+### Getting a picture/image
 - description: retrieve a image; if /:id = first then gets first image, else must specify an image id
 - request: `GET /api/image/:gallery/:id`
 - response: 200 || 403 if Unauthorized
@@ -139,7 +139,7 @@ $ curl http://localhost:3000/api/x/image/first
 where x is the username of the user who's gallery you want to access
 ```
 
-###Getting the next image
+### Getting the next image
 - description: given an image id get 'next' image. This is for the next image button on the front-end and behaves as one expects it to (i.e. A1 specs).
 - request: `GET /api/next/:gallery/:id`
 - response: 200
@@ -161,7 +161,7 @@ $ curl http://localhost:3000/api/next/x/TpDXlZpFPlyxKN8N
 where x is the username of the user who's gallery you want to access
 ```
 
-###Getting the previous image
+### Getting the previous image
 - description: given an image id get 'previous' image. This is for the previous image button on the front-end and behaves as one expects it to (i.e. A1 specs).
 - request: `GET /api/prev/:gallery/:id`
 - response: 200
@@ -183,7 +183,7 @@ $ curl http://localhost:3000/api/next/x/TpDXlZpFPlyxKN8N
 where x is the username of the user who's gallery you want to access
 ```
 
-###Deleting an image
+### Deleting an image
 - description: remove an image given its id
 - request: `DELETE /api/image/:gallery/:image`
 - response: 200 || 403 if Unauthorized
@@ -194,8 +194,8 @@ $ curl http://localhost:3000/api/next/x/TpDXlZpFPlyxKN8N
 where x is the username of the user who's gallery you want to access
 ```
 
-##Comments API
-###Adding/Creating A Comment
+## Comments API
+### Adding/Creating A Comment
 - description: create a comment, recommend test using form on front-end
 - request `POST /api/addcomment/`
   - content-type: `application/json`
@@ -216,7 +216,7 @@ $curl -H "Content-Type: application/json"
   http://localhost:3000/api/addcomment/
 ```
 
-###Getting Comments
+### Getting Comments
 - description get the next (start_index + 10) comments for image with a given imgid
 - request: `GET /api/comments/:imgid/:start_index`
 - response: 200 || 403 if Unauthorized
@@ -234,7 +234,7 @@ $curl -H "Content-Type: application/json"
 $curl http://localhost:3000/api/comments/xyz/0
 ```
 
-###Deleting a Comment
+### Deleting a Comment
 - description: remove comment given its imgid and html content, recommend testing using front-end (make a comment then press x to delete - it makes a call straight to this method). Moreover, for whatever reason curl commands act weird with passing body to DELETE.
 - request: `DELETE /api/comment/:id/:owner`
   - content-type: `params`
