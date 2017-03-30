@@ -91,6 +91,11 @@ app.get('/api/signout/', function (req, res, next) {
     });
 });
 
+// signout, signin
+app.get('/', function (req, res, next) {
+    res.send("hi");
+});
+
 /*upload form handling using multipart form data as per reqs*/
 app.post("/api/upload/", upload.single('picture'), function (req, res, next) {
   //auth
