@@ -8,3 +8,5 @@ cd app
 npm install
 node app.js
 ```
+## Documentation
+see the api docs [here](./app/README.md)
