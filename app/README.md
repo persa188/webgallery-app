@@ -1,5 +1,5 @@
 # API Documentation
-# #Users API
+## Users API
 ### Registering A New User
 - description: register a new user
 - request: `PUT /api/users/`
