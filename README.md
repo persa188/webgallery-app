@@ -1,3 +1,6 @@
+**update**: as of 2018 this app no longer has full functionality (idk why), I may rewrite this later.
+
+
 this is a simple web gallery app made with node.js and vanilla html/css/js for a CSCC09 at utsc. this was publically uploaded to github
 **after** assignments were marked. usage of materials in this repo are under the MIT license.
 
